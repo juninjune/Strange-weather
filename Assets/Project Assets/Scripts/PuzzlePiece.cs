@@ -57,6 +57,9 @@ public class PuzzlePiece : MonoBehaviour
         if(Physics.Raycast(ray, out hit)){
             if(hit.collider.gameObject == this.gameObject){
                 isHolded = true;
+                Handheld.Vibrate();
+                AudioManager.instance.Play(0);
+                OSCManager.instance.StartSfx(0);
             }
         }
     }
@@ -74,6 +77,7 @@ public class PuzzlePiece : MonoBehaviour
             transform.position = hit.point + new Vector3(0, 0.15f, 0);
             if(CheckCorrect(hit.point)){
                 puzzle.AttachPiece(this.gameObject, index);
+                OSCManager.instance.StopSfx(0);
                 isFit = true;
             }
         }
@@ -81,6 +85,7 @@ public class PuzzlePiece : MonoBehaviour
 
     private void HoldEnd(){
         isHolded = false;
+        OSCManager.instance.StopSfx(0);
     }
 
     private bool CheckCorrect(Vector3 position){

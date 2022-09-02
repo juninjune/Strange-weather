@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d9e50a0b181469f9b29329f9f6ae3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctDistance: 0.3
   materials:
   - {fileID: 2100000, guid: 787e6d65c4b5043e699dbfe5f8632370, type: 2}
   - {fileID: 2100000, guid: 168c0451949df4d4e98c5f78d31f3082, type: 2}

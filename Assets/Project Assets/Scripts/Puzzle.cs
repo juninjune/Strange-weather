@@ -6,6 +6,7 @@ using UnityEngine;
 public class Puzzle : MonoBehaviour
 {
     public GameObject[] pieceHolders;
+    [SerializeField] GameObject particlePrefab;
     
     private bool[] isFits;
 
@@ -26,8 +27,11 @@ public class Puzzle : MonoBehaviour
     }
 
     public void AttachPiece(GameObject piece, int i){
+        piece.transform.parent = pieceHolders[i].transform;
         piece.transform.SetPositionAndRotation(pieceHolders[i].transform.position, pieceHolders[i].transform.rotation);
         isFits[i] = true;
+        AudioManager.instance.Play(1);
+        Handheld.Vibrate();
 
         if(CheckDone()){
             Done();
@@ -47,6 +51,9 @@ public class Puzzle : MonoBehaviour
     }
 
     private void Done(){
-        Debug.Log("Puzzle Solved!!!");
+        AudioManager.instance.Play(2);
+        Instantiate(particlePrefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+        OSCManager.instance.StartFx(1);
+        gameObject.SetActive(false);
     }
 }

@@ -517,9 +517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffdf69a426c8040d2b68251eee6bdc6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieces: []
   pieceHolders:
   - {fileID: 7603219127783217774}
   - {fileID: 7603219126851693311}
   - {fileID: 7603219126324095529}
   - {fileID: 7603219127888199159}
+  particlePrefab: {fileID: 1247311384876784, guid: a8336b0127ee94081863cd3112c470fc, type: 3}
