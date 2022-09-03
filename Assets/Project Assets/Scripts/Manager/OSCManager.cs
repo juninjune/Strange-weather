@@ -43,4 +43,9 @@ public class OSCManager : MonoBehaviour
         message.values.Add(position.z);
         TouchDesignerOSC.Send(message);
     }
+
+    public void SendEventToTD(int index)
+    {
+
+    }
 }

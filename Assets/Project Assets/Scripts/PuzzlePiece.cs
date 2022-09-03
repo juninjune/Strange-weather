@@ -10,7 +10,7 @@ public class PuzzlePiece : MonoBehaviour
     private int index;
     private bool isHolded = false;
     private bool isFit = false;
-
+    
     public void Initiate(int i){
         puzzle = FindObjectOfType<Puzzle>();
         GetComponent<Renderer>().material = materials[i];
